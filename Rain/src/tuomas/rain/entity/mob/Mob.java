@@ -1,6 +1,7 @@
 package tuomas.rain.entity.mob;
 
 import tuomas.rain.entity.Entity;
+import tuomas.rain.entity.particle.Particle;
 import tuomas.rain.entity.projectile.Projectile;
 import tuomas.rain.entity.projectile.WizardProjectile;
 import tuomas.rain.graphics.Sprite;

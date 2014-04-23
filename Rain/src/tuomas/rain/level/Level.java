@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tuomas.rain.entity.Entity;
+import tuomas.rain.entity.Spawner;
 import tuomas.rain.entity.projectile.Projectile;
 import tuomas.rain.graphics.Screen;
 import tuomas.rain.level.tile.Tile;
@@ -29,6 +30,8 @@ public class Level {
 	public Level(String path) {
 		loadLevel(path);
 		generateLevel();
+		
+		new Spawner(16 * 16, 62 * 16, Spawner.Type.PARTICLE, 500);
 	}
 
 	protected void generateLevel() {
