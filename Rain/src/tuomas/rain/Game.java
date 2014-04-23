@@ -9,12 +9,14 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import tuomas.rain.entity.mob.Player;
 import tuomas.rain.graphics.Screen;
+import tuomas.rain.graphics.Sprite;
 import tuomas.rain.graphics.SpriteSheet;
 import tuomas.rain.input.Keyboard;
 import tuomas.rain.input.Mouse;
@@ -152,7 +154,15 @@ public class Game extends Canvas implements Runnable {
 		int yScroll = player.y - screen.height / 2;
 		level.render(xScroll, yScroll, screen);
 		player.render(screen);
-
+		
+		Sprite sprite = new Sprite(2, 2, 0xffffff);
+		
+		Random random = new Random();
+		for (int i = 0; i< 100; i++){
+		 	int x = random.nextInt(30);
+			int y = random.nextInt(30);
+			screen.renderSprite(width - 60 + x, 50 + y, sprite, true);
+		}
 		for (int i = 0; i < pixels.length; i++) {
 			pixels[i] = screen.pixels[i];
 		}

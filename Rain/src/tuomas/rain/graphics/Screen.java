@@ -21,7 +21,7 @@ public class Screen {
 	public Screen(int width, int height) {
 		this.width = width;
 		this.height = height;
-		pixels = new int[width * height]; //0 - 50 399 = 50 400
+		pixels = new int[width * height]; // 0 - 50 399 = 50 400
 
 		for (int i = 0; i < MAP_SIZE * MAP_SIZE; i++) {
 			tiles[i] = random.nextInt(0xffffff);
@@ -35,7 +35,24 @@ public class Screen {
 		}
 	}
 
-	//-------------------------------------------------------- RENDERING  --------------------------------------------------------
+	// -------------------------------------------------------- RENDERING -->
+
+	public void renderSprite(int xp, int yp, Sprite sprite, boolean fixed) {
+		if (fixed) {
+			xp -= xOffset;
+			yp -= yOffset;
+		}
+
+		for (int y = 0; y < sprite.getHeight(); y++) {
+			int ya = y + yp;
+			for (int x = 0; x < sprite.getWidth(); x++) {
+				int xa = x + xp;
+				if (xa < 0 || xa >= width || ya < 0 || ya >= height) continue;
+					pixels[xa + ya * width] = sprite.pixels[x + y * sprite.getWidth()];
+			}
+		}
+
+	}
 
 	public void renderTile(int xp, int yp, Sprite sprite) {
 		xp -= xOffset;
@@ -46,16 +63,17 @@ public class Screen {
 
 			for (int x = 0; x < sprite.SIZE; x++) {
 				int xa = x + xp;
-				if (xa < -sprite.SIZE || xa >= width || ya < 0 || ya >= height) break;
+				if (xa < -sprite.SIZE || xa >= width || ya < 0 || ya >= height)
+					break;
 				if (xa < 0) {
 					xa = 0;
 				}
-				
+
 				pixels[xa + ya * width] = sprite.pixels[x + y * sprite.SIZE];
 			}
 		}
 	}
-	
+
 	public void renderProjectile(int xp, int yp, Projectile p) {
 		xp -= xOffset;
 		yp -= yOffset;
@@ -65,13 +83,15 @@ public class Screen {
 
 			for (int x = 0; x < p.getSpriteSize(); x++) {
 				int xa = x + xp;
-				if (xa < -p.getSpriteSize() || xa >= width || ya < 0 || ya >= height) break;
+				if (xa < -p.getSpriteSize() || xa >= width || ya < 0
+						|| ya >= height)
+					break;
 				if (xa < 0) {
 					xa = 0;
 				}
-				
+
 				int col = p.getSprite().pixels[x + y * p.getSprite().SIZE];
-				if(col != 0xffFF00FF){
+				if (col != 0xffFF00FF) {
 					pixels[xa + ya * width] = col;
 				}
 			}
@@ -100,7 +120,8 @@ public class Screen {
 					xs = 31 - x;
 				}
 
-				if (xa < -32 || xa >= width || ya < 0 || ya >= height) break;
+				if (xa < -32 || xa >= width || ya < 0 || ya >= height)
+					break;
 				if (xa < 0) {
 					xa = 0;
 				}
