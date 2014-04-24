@@ -1,12 +1,13 @@
 package tuomas.rain.entity.projectile;
 
 import tuomas.rain.entity.particle.Particle;
+import tuomas.rain.entity.spawner.Spawner;
 import tuomas.rain.graphics.Screen;
 import tuomas.rain.graphics.Sprite;
 
 public class WizardProjectile extends Projectile {
 
-	public static final int FIRE_RATE = 50; // Korkeampi = hitammin ampuu!
+	public static final int FIRE_RATE = 10; // Korkeampi = hitammin ampuu!
 
 	public WizardProjectile(int x, int y, double dir) {
 		super(x, y, dir);
@@ -24,8 +25,7 @@ public class WizardProjectile extends Projectile {
 
 	public void update() {
 		if (level.tileCollision(x, y, nx, ny, 9)) {
-			Particle p = new Particle((int) x, (int) y, 50);
-			level.add(p);
+			level.add(new Spawner((int)x, (int)y, Spawner.Type.PARTICLE, 500, level));
 			remove();
 		}
 		move();
