@@ -1,7 +1,6 @@
 package tuomas.rain.entity.projectile;
 
-import tuomas.rain.entity.particle.Particle;
-import tuomas.rain.entity.spawner.Spawner;
+import tuomas.rain.entity.spawner.ParticleSpawner;
 import tuomas.rain.graphics.Screen;
 import tuomas.rain.graphics.Sprite;
 
@@ -25,7 +24,7 @@ public class WizardProjectile extends Projectile {
 
 	public void update() {
 		if (level.tileCollision(x, y, nx, ny, 9)) {
-			level.add(new Spawner((int)x, (int)y, Spawner.Type.PARTICLE, 500, level));
+			level.add(new ParticleSpawner((int) x, (int) y, 44, 50, level));
 			remove();
 		}
 		move();

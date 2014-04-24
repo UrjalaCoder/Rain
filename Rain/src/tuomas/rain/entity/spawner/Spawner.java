@@ -1,10 +1,6 @@
 package tuomas.rain.entity.spawner;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import tuomas.rain.entity.Entity;
-import tuomas.rain.entity.particle.Particle;
 import tuomas.rain.level.Level;
 
 public class Spawner extends Entity{

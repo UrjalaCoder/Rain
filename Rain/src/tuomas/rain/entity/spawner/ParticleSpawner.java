@@ -1,7 +1,6 @@
 package tuomas.rain.entity.spawner;
 
 import tuomas.rain.entity.particle.Particle;
-import tuomas.rain.entity.spawner.Spawner.Type;
 import tuomas.rain.level.Level;
 
 public class ParticleSpawner extends Spawner {
