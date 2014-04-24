@@ -200,7 +200,7 @@ public class Game extends Canvas implements Runnable {
 		BufferedImage logo = null;
 		
 		try {
-			logo = ImageIO.read(SpriteSheet.class.getResource("/images/logo.png"));
+			logo = ImageIO.read(SpriteSheet.class.getResource("/textures/sheets/Knight_game_icon1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

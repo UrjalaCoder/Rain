@@ -33,7 +33,7 @@ public class Level {
 		loadLevel(path);
 		generateLevel();
 
-		add(new Spawner(16 * 16, 62 * 16, Spawner.Type.PARTICLE, 500));
+		add(new Spawner(16 * 16, 62 * 16, Spawner.Type.PARTICLE, 1500, this));
 	}
 
 	protected void generateLevel() {
@@ -49,6 +49,10 @@ public class Level {
 
 		for (int i = 0; i < projectiles.size(); i++) {
 			projectiles.get(i).update();
+		}
+		
+		for (int i = 0; i < particles.size(); i++) {
+			particles.get(i).update();
 		}
 	}
 
@@ -98,6 +102,10 @@ public class Level {
 
 		for (int i = 0; i < projectiles.size(); i++) {
 			projectiles.get(i).render(screen);
+		}
+		
+		for (int i = 0; i < particles.size(); i++) {
+			particles.get(i).render(screen);
 		}
 
 	}
