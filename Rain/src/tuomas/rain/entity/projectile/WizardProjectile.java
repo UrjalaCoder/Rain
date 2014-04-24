@@ -6,12 +6,12 @@ import tuomas.rain.graphics.Sprite;
 
 public class WizardProjectile extends Projectile {
 
-	public static final int FIRE_RATE = 10; // Korkeampi = hitammin ampuu!
+	public static final int FIRE_RATE = 50; // Korkeampi = hitammin ampuu!
 
 	public WizardProjectile(int x, int y, double dir) {
 		super(x, y, dir);
 
-		range = 200;
+		range = 25 * 16;
 		speed = 4;
 		damage = 20;
 
@@ -24,7 +24,7 @@ public class WizardProjectile extends Projectile {
 
 	public void update() {
 		if (level.tileCollision(x, y, nx, ny, 9)) {
-			Particle p = new Particle((int) x, (int) y, 50, 500);
+			Particle p = new Particle((int) x, (int) y, 2);
 			level.add(p);
 			remove();
 		}
