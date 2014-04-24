@@ -49,7 +49,7 @@ public class Sprite {
 			SpriteSheet.projectile_wizard);
 	
 	// Particle sprites -->
-	public static Sprite particle_normal = new Sprite(3, 0xAAAAAA);
+	public static Sprite particle_normal = new Sprite(3, 0xAABFAA);
 
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
