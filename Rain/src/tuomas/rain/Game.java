@@ -154,6 +154,7 @@ public class Game extends Canvas implements Runnable {
 		int yScroll = player.y - screen.height / 2;
 		level.render(xScroll, yScroll, screen);
 		player.render(screen);
+		screen.renderSheet(40, 40, SpriteSheet.player_mage_down, false);
 		
 		/*Sprite sprite = new Sprite(2, 2, 0xffffff);
 		
