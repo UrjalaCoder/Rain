@@ -9,14 +9,12 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.IOException;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import tuomas.rain.entity.mob.Player;
 import tuomas.rain.graphics.Screen;
-import tuomas.rain.graphics.Sprite;
 import tuomas.rain.graphics.SpriteSheet;
 import tuomas.rain.input.Keyboard;
 import tuomas.rain.input.Mouse;

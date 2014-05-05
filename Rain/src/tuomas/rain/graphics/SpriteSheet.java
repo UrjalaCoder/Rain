@@ -13,30 +13,21 @@ public class SpriteSheet {
 	public int[] pixels;
 	BufferedImage image = null;
 
-	public static SpriteSheet tiles = new SpriteSheet(
-			"/textures/sheets/spritesheet.png", 256);
-	public static SpriteSheet spawn_level = new SpriteSheet(
-			"/textures/sheets/spawn_level.png", 48);
-	public static SpriteSheet projectile_wizard = new SpriteSheet(
-			"/textures/sheets/projectiles/wizard.png", 48);
-	public static SpriteSheet player_mage = new SpriteSheet(
-			"/textures/sheets/Mage_sheet.png", 128, 96);
-	public static SpriteSheet player_archer = new SpriteSheet(
-			"/textures/sheets/Archer_sheet.png", 96);
+	public static SpriteSheet tiles = new SpriteSheet("/textures/sheets/spritesheet.png", 256);
+	public static SpriteSheet spawn_level = new SpriteSheet("/textures/sheets/spawn_level.png", 48);
+	public static SpriteSheet projectile_wizard = new SpriteSheet("/textures/sheets/projectiles/wizard.png", 48);
+	
+	public static SpriteSheet player_archer = new SpriteSheet("/textures/sheets/Archer_sheet.png", 96);
 
-	public static SpriteSheet player_mage_down = new SpriteSheet(player_mage,
-			2, 0, 1, 3, 32);
-	public static SpriteSheet player_mage_up = new SpriteSheet(player_mage, 0,
-			0, 1, 3, 32);
-	public static SpriteSheet player_mage_left = new SpriteSheet(player_mage,
-			1, 0, 1, 3, 32);
-	public static SpriteSheet player_mage_right = new SpriteSheet(player_mage,
-			3, 0, 1, 3, 32);
+	public static SpriteSheet player_mage = new SpriteSheet("/textures/sheets/Mage_sheet.png", 128, 96);
+	public static SpriteSheet player_mage_down = new SpriteSheet(player_mage, 2, 0, 1, 3, 32);
+	public static SpriteSheet player_mage_up = new SpriteSheet(player_mage, 0, 0, 1, 3, 32);
+	public static SpriteSheet player_mage_left = new SpriteSheet(player_mage, 1, 0, 1, 3, 32);
+	public static SpriteSheet player_mage_right = new SpriteSheet(player_mage, 3, 0, 1, 3, 32);
 
 	private Sprite[] sprites;
 
-	public SpriteSheet(SpriteSheet sheet, int x, int y, int width, int height,
-			int spriteSize) {
+	public SpriteSheet(SpriteSheet sheet, int x, int y, int width, int height, int spriteSize) {
 
 		int xx = x * spriteSize;
 		int yy = y * spriteSize;
@@ -67,9 +58,7 @@ public class SpriteSheet {
 				int[] spritePixels = new int[spriteSize * spriteSize];
 				for (int y0 = 0; y0 < spriteSize; y0++) {
 					for (int x0 = 0; x0 < spriteSize; x0++) {
-						spritePixels[x0 + y0 * spriteSize] = pixels[(x0 + xa
-								* spriteSize)
-								+ (y0 + ya * spriteSize)];
+						spritePixels[x0 + y0 * spriteSize] = pixels[(x0 + xa * spriteSize) + (y0 + ya * spriteSize)];
 					}
 				}
 				Sprite sprite = new Sprite(spritePixels, spriteSize, spriteSize);

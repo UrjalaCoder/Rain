@@ -14,10 +14,9 @@ public class AnimatedSprite extends Sprite {
 		this.length = length;
 		sprite = sheet.getSprites()[0];
 		if (length > sheet.getSprites().length) {
-			System.err.println("[ERROR] Length of animation is too short"
-					+ this);
+			System.err.println("[ERROR] Length of animation is too short" + this);
 		}
-		
+
 		System.out.println("Frame: " + frame + " Sprite " + sprite);
 	}
 

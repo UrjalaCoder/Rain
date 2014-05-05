@@ -16,14 +16,10 @@ public class Player extends Mob {
 	private Sprite sprite;
 	private int anim = 0;
 	private boolean walking = false;
-	private AnimatedSprite down = new AnimatedSprite(
-			SpriteSheet.player_mage_down, 32, 32, 3);
-	private AnimatedSprite up = new AnimatedSprite(SpriteSheet.player_mage_up,
-			32, 32, 3);
-	private AnimatedSprite left = new AnimatedSprite(
-			SpriteSheet.player_mage_left, 32, 32, 3);
-	private AnimatedSprite right = new AnimatedSprite(
-			SpriteSheet.player_mage_right, 32, 32, 3);
+	private AnimatedSprite down = new AnimatedSprite(SpriteSheet.player_mage_down, 32, 32, 3);
+	private AnimatedSprite up = new AnimatedSprite(SpriteSheet.player_mage_up, 32, 32, 3);
+	private AnimatedSprite left = new AnimatedSprite(SpriteSheet.player_mage_left, 32, 32, 3);
+	private AnimatedSprite right = new AnimatedSprite(SpriteSheet.player_mage_right, 32, 32, 3);
 
 	private AnimatedSprite animSprite = down;
 
@@ -154,7 +150,7 @@ public class Player extends Mob {
 			}
 			flip = 1;
 		}
-		sprite = animSprite.getSprite();
+		//sprite = animSprite.getSprite();
 		screen.renderPlayer(x - 16, y - 16, sprite, flip);
 	}
 
